@@ -1,6 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-import 'package:adminpanel/models/RecentFile.dart';
+import 'package:adminpanel/models/recent_file.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -16,10 +14,10 @@ class RecentFiles extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: EdgeInsets.all(defaultPadding),
-        decoration: BoxDecoration(
+        padding: const EdgeInsets.all(defaultPadding),
+        decoration: const BoxDecoration(
           color: secondaryColor,
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +32,7 @@ class RecentFiles extends StatelessWidget {
               child: DataTable2(
                 columnSpacing: defaultPadding,
                 minWidth: 600,
-                columns: [
+                columns: const [
                   DataColumn(
                     label: Text("File Name"),
                   ),

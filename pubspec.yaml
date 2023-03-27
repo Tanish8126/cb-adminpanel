@@ -16,8 +16,8 @@ dependencies:
   google_fonts: ^3.0.1
   flutter_svg: ^1.1.5
   fl_chart: ^0.55.1
-  provider: ^6.0.3
   data_table_2: ^2.3.7
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:
