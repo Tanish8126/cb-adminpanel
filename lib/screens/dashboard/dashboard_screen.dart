@@ -1,11 +1,8 @@
+import 'package:cb_admin_panel/screens/outlet_info/outlet_info.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../../utils/constants.dart';
 import 'components/header.dart';
-
-import 'components/my_files.dart';
-import 'components/recent_files.dart';
-import 'components/storage_details.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -26,12 +23,17 @@ class DashboardScreen extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: Column(
-                    children: const [
-                      MyFiles(),
-                      SizedBox(height: defaultPadding),
-                      RecentFiles(),
-                      SizedBox(height: defaultPadding),
-                      StorageDetails(),
+                    children: [
+                      //  MyFiles(),
+                      // SizedBox(height: defaultPadding),
+                      //  RecentFiles(),
+                      //  SizedBox(height: defaultPadding),
+                      // StorageDetails(),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, OutletInfo.routeName);
+                          },
+                          child: Text("Outlet Details"))
                     ],
                   ),
                 ),

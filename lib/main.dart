@@ -1,11 +1,12 @@
+import 'package:cb_admin_panel/screens/main/main_screen.dart';
+import 'package:cb_admin_panel/utils/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import 'constants.dart';
+import 'utils/constants.dart';
 import 'controllers/menucontroller.dart';
-import 'screens/main/main_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,8 +35,9 @@ class MyApp extends StatelessWidget {
             create: (context) => ControllerMenu(),
           ),
         ],
-        child: const MainScreen(),
       ),
+      initialRoute: MainScreen.routeName,
+      routes: routes,
     );
   }
 }
