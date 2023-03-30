@@ -18,6 +18,10 @@ dependencies:
   fl_chart: ^0.55.1
   data_table_2: ^2.3.7
   provider: ^6.0.5
+  firebase_auth: ^4.3.0
+  firebase_core: ^2.8.0
+  firebase_storage: ^11.0.16
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:

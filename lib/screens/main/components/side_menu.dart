@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -86,7 +84,7 @@ class DrawerListTile extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: TextStyle(color: Colors.white54),
+        style: const TextStyle(color: Colors.white54),
       ),
     );
   }

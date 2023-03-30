@@ -15,7 +15,7 @@ class FileInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(defaultPadding),
+      //  padding: const EdgeInsets.all(defaultPadding),
       decoration: const BoxDecoration(
         color: secondaryColor,
         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -59,14 +59,14 @@ class FileInfoCard extends StatelessWidget {
                 "${info.numOfFiles} Files",
                 style: Theme.of(context)
                     .textTheme
-                    .caption!
+                    .bodySmall!
                     .copyWith(color: Colors.white70),
               ),
               Text(
                 info.totalStorage!,
                 style: Theme.of(context)
                     .textTheme
-                    .caption!
+                    .bodySmall!
                     .copyWith(color: Colors.white),
               ),
             ],
