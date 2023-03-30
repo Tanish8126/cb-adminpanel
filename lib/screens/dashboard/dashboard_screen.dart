@@ -1,10 +1,9 @@
-import 'package:adminpanel/responsive.dart';
-import 'package:adminpanel/screens/dashboard/components/my_fields.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 import 'components/header.dart';
 
+import 'components/my_files.dart';
 import 'components/recent_files.dart';
 import 'components/storage_details.dart';
 
@@ -27,24 +26,15 @@ class DashboardScreen extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: Column(
-                    children: [
-                      const MyFiles(),
-                      const SizedBox(height: defaultPadding),
-                      const RecentFiles(),
-                      if (Responsive.isMobile(context))
-                        const SizedBox(height: defaultPadding),
-                      if (Responsive.isMobile(context)) const StarageDetails(),
+                    children: const [
+                      MyFiles(),
+                      SizedBox(height: defaultPadding),
+                      RecentFiles(),
+                      SizedBox(height: defaultPadding),
+                      StorageDetails(),
                     ],
                   ),
                 ),
-                if (!Responsive.isMobile(context))
-                  const SizedBox(width: defaultPadding),
-                // On Mobile means if the screen is less than 850 we dont want to show it
-                if (!Responsive.isMobile(context))
-                  const Expanded(
-                    flex: 2,
-                    child: StarageDetails(),
-                  ),
               ],
             )
           ],
