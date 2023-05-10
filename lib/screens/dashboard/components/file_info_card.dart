@@ -1,8 +1,10 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../utils/constants.dart';
 import '../../../models/my_files.dart';
+import '../../../utils/constants/constants.dart';
 
 class FileInfoCard extends StatelessWidget {
   const FileInfoCard({
@@ -15,9 +17,9 @@ class FileInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //  padding: const EdgeInsets.all(defaultPadding),
+      //  padding: const EdgeInsets.all(16),
       decoration: const BoxDecoration(
-        color: secondaryColor,
+        color: kSecondaryColor,
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
@@ -28,7 +30,7 @@ class FileInfoCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                padding: const EdgeInsets.all(defaultPadding * 0.75),
+                padding: pda(0.02),
                 height: 40,
                 width: 40,
                 decoration: BoxDecoration(
@@ -67,7 +69,7 @@ class FileInfoCard extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall!
-                    .copyWith(color: Colors.white),
+                    .copyWith(color: kWhite),
               ),
             ],
           )
@@ -80,7 +82,7 @@ class FileInfoCard extends StatelessWidget {
 class ProgressLine extends StatelessWidget {
   const ProgressLine({
     Key? key,
-    this.color = primaryColor,
+    this.color = kPrimaryColor,
     required this.percentage,
   }) : super(key: key);
 

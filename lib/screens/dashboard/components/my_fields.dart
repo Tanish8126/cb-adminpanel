@@ -1,6 +1,6 @@
+import 'package:cb_admin_panel/utils/constants/sizedbox.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/constants.dart';
 import '../../../models/my_files.dart';
 import '../../../responsive.dart';
 import 'file_info_card.dart';
@@ -25,9 +25,8 @@ class MyFiles extends StatelessWidget {
             ElevatedButton.icon(
               style: TextButton.styleFrom(
                 padding: EdgeInsets.symmetric(
-                  horizontal: defaultPadding * 1.5,
-                  vertical:
-                      defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
+                  horizontal: 16 * 1.5,
+                  vertical: 16 / (Responsive.isMobile(context) ? 2 : 1),
                 ),
               ),
               onPressed: () {},
@@ -36,7 +35,7 @@ class MyFiles extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: defaultPadding),
+        sh02,
         Responsive(
           mobile: FileInfoCardGridView(
             crossAxisCount: size.width < 650 ? 2 : 4,
@@ -70,8 +69,8 @@ class FileInfoCardGridView extends StatelessWidget {
       itemCount: demoMyFiles.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
-        crossAxisSpacing: defaultPadding,
-        mainAxisSpacing: defaultPadding,
+        crossAxisSpacing: 16,
+        mainAxisSpacing: 16,
         childAspectRatio: childAspectRatio,
       ),
       itemBuilder: (context, index) => FileInfoCard(info: demoMyFiles[index]),

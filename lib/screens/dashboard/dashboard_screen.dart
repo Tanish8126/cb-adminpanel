@@ -1,22 +1,27 @@
+import 'package:cb_admin_panel/screens/dashboard/frame/controller.dart';
 import 'package:cb_admin_panel/screens/outlet_info/outlet_info.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../utils/constants.dart';
 import 'components/header.dart';
+import 'components/my_files.dart';
+import 'components/recent_transactions.dart';
+import 'components/storage_details.dart';
 
 class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
+  DashboardScreen({Key? key}) : super(key: key);
+  final controller = Get.put(DashboardScreenController());
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
         primary: false,
-        padding: const EdgeInsets.all(defaultPadding),
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             const Header(),
-            const SizedBox(height: defaultPadding),
+            const SizedBox(height: 16),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -24,11 +29,22 @@ class DashboardScreen extends StatelessWidget {
                   flex: 5,
                   child: Column(
                     children: [
-                      //  MyFiles(),
-                      // SizedBox(height: defaultPadding),
-                      //  RecentFiles(),
-                      //  SizedBox(height: defaultPadding),
-                      // StorageDetails(),
+                      const MyFiles(),
+                      const SizedBox(height: 16),
+                      Column(
+                        children: List.generate(
+                          controller.transactionData.length,
+                          (index) => RecentFiles(
+                              // serves: controller.productsData[index].serves,
+                              // size: controller.productsData[index].size,
+                              // price: controller.productsData[index].price,
+                              // image: controller.productsData[index].image,
+                              // name: controller.productsData[index].name,
+                              ),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      const StorageDetails(),
                       TextButton(
                           onPressed: () {
                             Navigator.pushNamed(context, OutletInfo.routeName);

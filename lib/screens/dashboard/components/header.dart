@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../utils/constants.dart';
 import '../../../responsive.dart';
+import '../../../utils/constants/constants.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -33,13 +33,10 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: defaultPadding),
-      padding: const EdgeInsets.symmetric(
-        horizontal: defaultPadding,
-        vertical: defaultPadding / 2,
-      ),
+      margin: pda(0.02),
+      padding: pds(0.02, 0.01),
       decoration: BoxDecoration(
-        color: secondaryColor,
+        color: kSecondaryColor,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         border: Border.all(color: Colors.white10),
       ),
@@ -50,9 +47,9 @@ class ProfileCard extends StatelessWidget {
             height: 38,
           ),
           if (!Responsive.isMobile(context))
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-              child: Text("Angelina Jolie"),
+            Padding(
+              padding: pda(0.02),
+              child: const Text("Angelina Jolie"),
             ),
           const Icon(Icons.keyboard_arrow_down),
         ],
@@ -71,7 +68,7 @@ class SearchField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         hintText: "Search",
-        fillColor: secondaryColor,
+        fillColor: kSecondaryColor,
         filled: true,
         border: const OutlineInputBorder(
           borderSide: BorderSide.none,
@@ -80,10 +77,10 @@ class SearchField extends StatelessWidget {
         suffixIcon: InkWell(
           onTap: () {},
           child: Container(
-            padding: const EdgeInsets.all(defaultPadding * 0.75),
-            margin: const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+            padding: pda(0.02),
+            margin: pda(0.02),
             decoration: const BoxDecoration(
-              color: primaryColor,
+              color: kPrimaryColor,
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
             child: SvgPicture.asset("assets/icons/Search.svg"),

@@ -1,9 +1,8 @@
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
-import '../../../utils/constants.dart';
 import '../../../models/recent_file.dart';
+import '../../../utils/constants/constants.dart';
 
 class RecentFiles extends StatelessWidget {
   const RecentFiles({
@@ -14,33 +13,33 @@ class RecentFiles extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: const EdgeInsets.all(defaultPadding),
+        padding: const EdgeInsets.all(16),
         decoration: const BoxDecoration(
-          color: secondaryColor,
+          color: kSecondaryColor,
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Recent Files",
+              "Recent Transactions",
               style: Theme.of(context).textTheme.titleMedium,
             ),
             SizedBox(
               height: 500,
               width: double.infinity,
               child: DataTable2(
-                columnSpacing: defaultPadding,
+                columnSpacing: 16,
                 minWidth: 600,
                 columns: const [
                   DataColumn(
-                    label: Text("File Name"),
+                    label: Text("Amount"),
                   ),
                   DataColumn(
                     label: Text("Date"),
                   ),
                   DataColumn(
-                    label: Text("Size"),
+                    label: Text("Status"),
                   ),
                 ],
                 rows: List.generate(
@@ -59,23 +58,11 @@ class RecentFiles extends StatelessWidget {
 DataRow recentFileDataRow(RecentFile fileInfo) {
   return DataRow(
     cells: [
-      DataCell(
-        Row(
-          children: [
-            SvgPicture.asset(
-              fileInfo.icon!,
-              height: 30,
-              width: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-              child: Text(fileInfo.title!),
-            ),
-          ],
-        ),
+      const DataCell(
+        Text("200"),
       ),
       DataCell(Text(fileInfo.date!)),
-      DataCell(Text(fileInfo.size!)),
+      const DataCell(Text("Captured")),
     ],
   );
 }

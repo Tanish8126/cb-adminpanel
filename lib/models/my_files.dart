@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/constants.dart';
+import '../utils/constants/constants.dart';
 
 class CloudStorageInfo {
   final String? svgSrc, title, totalStorage;
@@ -23,7 +23,7 @@ List demoMyFiles = [
     numOfFiles: 1328,
     svgSrc: "assets/icons/Documents.svg",
     totalStorage: "1.9GB",
-    color: primaryColor,
+    color: kPrimaryColor,
     percentage: 35,
   ),
   CloudStorageInfo(

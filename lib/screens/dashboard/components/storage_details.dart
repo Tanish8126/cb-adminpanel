@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/constants.dart';
+import '../../../utils/constants/constants.dart';
 import 'chart.dart';
 import 'storage_info_card.dart';
 
@@ -12,9 +12,9 @@ class StorageDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(defaultPadding),
+      padding: const EdgeInsets.all(16),
       decoration: const BoxDecoration(
-        color: secondaryColor,
+        color: kSecondaryColor,
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
@@ -27,7 +27,7 @@ class StorageDetails extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: defaultPadding),
+          SizedBox(height: 16),
           Chart(),
           StorageInfoCard(
             svgSrc: "assets/icons/Documents.svg",

@@ -33,7 +33,7 @@ class OutletInfo extends StatelessWidget {
                               DocumentSnapshot document =
                                   snapshot.data!.docs[index];
                               return Padding(
-                                padding: EdgeInsets.all(12),
+                                padding: const EdgeInsets.all(12),
                                 child: Column(
                                   children: [
                                     Container(
@@ -43,7 +43,7 @@ class OutletInfo extends StatelessWidget {
                                       ),
                                       child: Column(
                                         children: [
-                                          SizedBox(height: 10),
+                                          const SizedBox(height: 10),
                                           buildOption(
                                             context,
                                             'Parent Name: ${document["name"]}',
@@ -62,7 +62,7 @@ class OutletInfo extends StatelessWidget {
                                           //     'Booking End: ${DateFormat('yyyy-MM-dd : h:mm a').format(document["bookingEnd"].toDate())}'),
                                           // buildOption(context,
                                           //     'Doctor Name: ${document["doctorName"]}'),
-                                          SizedBox(height: 5),
+                                          const SizedBox(height: 5),
                                         ],
                                       ),
                                     ),
