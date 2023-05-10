@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 
 import '../../../utils/constants.dart';
-import '../../../controllers/menucontroller.dart';
 import '../../../responsive.dart';
 
 class Header extends StatelessWidget {
@@ -15,10 +13,6 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: context.read<ControllerMenu>().controlMenu,
-        ),
         Text(
           "Dashboard",
           style: Theme.of(context).textTheme.titleLarge,

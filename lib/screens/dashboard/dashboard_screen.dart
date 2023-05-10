@@ -33,7 +33,7 @@ class DashboardScreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.pushNamed(context, OutletInfo.routeName);
                           },
-                          child: Text("Outlet Details"))
+                          child: const Text("Outlet Details"))
                     ],
                   ),
                 ),
